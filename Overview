@@ -1,0 +1,45 @@
+Gesture Control: Virtual Flight Game
+This project is a gesture-controlled virtual flight game that allows you to pilot an airplane using hand and face gestures. Using OpenCV, Mediapipe, and custom Python functions, this game offers a completely hands-free experience for controlling flight maneuvers like turning, accelerating, and performing other in-game actions.
+
+Features
+Hand Gesture Control: Control the plane's movements using hand gestures detected by the camera.
+Face Tracking: Face mesh tracking adds additional control functionality based on facial gestures.
+Virtual Key Presses: Hand gestures are mapped to specific keyboard inputs to control the game in real time.
+Real-Time Video Feed: The system processes live webcam input to detect hand and face movements.
+Technologies Used
+OpenCV: For handling webcam input and rendering visual elements.
+Mediapipe: Used for hand and face detection/tracking.
+ctypes: For simulating keyboard inputs based on detected gestures.
+Python: The core programming language used for the project.
+
+Install the required dependencies:
+pip install opencv-python mediapipe
+
+Ensure that your webcam is connected and working, and modify the cv2.VideoCapture index in main.py if needed to select the correct webcam.
+
+How to Play
+Run the main.py file:
+
+python main.py
+A window will open showing the webcam feed. The system will start tracking your hands and face to detect gestures.
+Use the following gestures to control the airplane:
+Move Hands: Move your hands to control the direction (left, right, up, down).
+Face Gestures: Control flight acceleration, brakes, and more using facial movements.
+Custom Gestures: The system maps specific hand movements to key presses for in-game actions like turning, accelerating, or other controls.
+
+File Structure
+main.py: The main game script that captures video input, processes hand and face gestures, and renders the game interface.
+inputfunction.py: A helper script that simulates keyboard inputs based on the detected gestures using ctypes.
+
+Customization
+Colors: The color of the virtual controls (red for remote control circles and blue for lines) can be modified in the REMOTE_COLOR_RED and REMOTE_COLOR_BLUE variables in main.py.
+Gesture Mappings: The mappings for gestures to keyboard inputs can be found in the inputfunction.py file. You can customize the keys and corresponding gestures here.
+
+Known Issues
+The webcam index might need adjustment depending on your setup. Modify the cv2.VideoCapture() index in main.py to select the correct camera.
+Some gestures may be hard to detect under low lighting conditions. Ensure you have good lighting for optimal performance.
+
+Future Improvements
+Add more advanced gesture controls for new in-game actions.
+Implement support for multiple facial gestures for enhanced control.
+Integrate the system with popular flight simulation software for an even more immersive experience.
